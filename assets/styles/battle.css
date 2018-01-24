@@ -1,0 +1,103 @@
+.players {
+}
+.player {
+  padding: 5px;
+  margin: 0;
+}
+.player:hover {
+  background-color: #CCC;
+}
+.button {
+  margin: 0;
+  padding: 0;
+}
+.player_name {
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+.player_stats {
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+.hp_bar {
+  border: 0;
+  height: 20px;
+  width: 100%;
+  margin: 0;
+  text-align: left;
+}
+.mp_bar {
+  border: 0;
+  height: 20px;
+  width: 100%;
+  margin: 0;
+  text-align: left;
+}
+progress:before {
+  content: attr(data-label);
+  vertical-align: middle;
+  position: relative;
+  float: right;
+  color: Black;
+  margin-right: 4px;
+}
+.hp_bar::-webkit-progress-bar {
+  background-color: inherit;
+  border: 2px solid Black;
+  border-bottom: 0;
+}
+.hp_bar::-webkit-progress-value {
+  background: linear-gradient(to left, #FFA17F, OrangeRed);
+}
+.mp_bar::-webkit-progress-bar {
+  background-color: inherit;
+  border: 2px solid Black;
+  border-top: 0;
+}
+.mp_bar::-webkit-progress-value {
+  background: linear-gradient(to left, #7FDFFF, DeepSkyBlue);
+}
+.exp_bar {
+  border: 2px solid Black;
+  border-bottom: 0;
+  height: 4px;
+  width: 33%;
+  float: right;
+  padding: 1px 1px 0 1px;
+}
+.exp_bar::-webkit-progress-bar {
+  background-color: inherit;
+}
+.exp_bar::-webkit-progress-value {
+  background-color: Black;
+}
+body {
+  background-color: #FFFFFF;
+  color: #000000;
+  font-family: verdana;
+  margin: 0;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+  overflow: hidden;
+}
+li {
+  float: left;
+  margin: 0;
+}
+li a {
+  color: White;
+  margin: 0;
+  display: block;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+}
+li a:hover {
+  background-color: Black;
+}

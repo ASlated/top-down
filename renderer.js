@@ -1,5 +1,11 @@
-require('pixi.js')
-require('phaser-shim')
+window.PIXI = require('phaser-ce/build/custom/pixi')
+window.p2 = require('phaser-ce/build/custom/p2')
+window.Phaser = require('phaser-ce/build/custom/phaser-split')
+
+const BootState = require('./js/BootState.js').BootState
+const PlayState = require('./js/PlayState.js').PlayState
+const BattleState = require('./js/BattleState.js').BattleState
+const BattleTransitionState = require('./js/BattleTransitionState.js').BattleTransitionState
 
 class Game extends Phaser.Game {
   constructor() {
@@ -7,22 +13,15 @@ class Game extends Phaser.Game {
       width: 640,
       height: 480,
       antialias: false,
-      renderer: Phaser.WEBGL,
-      states: {
-        preload: preload,
-        create: create,
-        update: update
-      }
+      renderer: Phaser.AUTO,
+      resolution: 0.5
     }
     super(config)
-  }
-
-  preload() {
-    this.load.image('robot', 'assets/images/robot.png')
-  }
-
-  create() {
-    this.add.sprite(0, 0, 'robot') 
+    this.state.add('boot', new BootState(this))
+    this.state.add('play', new PlayState(this))
+    this.state.add('battle', new BattleState(this))
+    this.state.add('battleTransition', new BattleTransitionState(this))
+    this.state.start('boot')
   }
 }
 
